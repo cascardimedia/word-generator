@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous">
+        </script>
+        <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css" >
+        <title>Word Generator</title>
+    </head>
+    <body>
+        <h1>Word Generator</h1>
+        <aside>
+            <h2>Import Content</h2>
+            <div id="step1" >
+                <input type="radio" name="type" id="latin" value="hipster-latin" checked>
+                <label for="latin">Latin</label>
+                <input type="radio" name="type" id="hipster" value="hipster-centric">
+                <label for="hipster">Hipster</label>
+                <label for="start">Start at: </label>
+                <input id="start" name="start" value="1">
+                <label for="paras">Paragraphs</label>
+                <input id="paras" name="paras" value="15">
+                <br>
+                <button id="import" onclick="wordGen.import()">Import</button>
+            </div>
+            <h2>Reverse</h2>
+            <div id="step2">
+                <button id="reverse"  onclick="wordGen.reverse();">Reverse words</button>
+            </div>
+            <h2>Shuffle</h2>
+            <div id="step3">
+                <button id="wordShuffle" onClick="wordGen.wordShuffle();">Shuffle words</button>
+            </div>
+        </aside>
+        <main>
+            <p id="text"></p>
+            <button id="copy">Copy to clipboard</button>
+        </main>
+        <div style="display:none;visibility:hidden;" id="buffer"></div>
+        <script src="js/generator.js"></script>
+        <script>
+         $('aside').accordion();
+        </script>
+    </body>
+</html>
